@@ -4,7 +4,7 @@
 pkgname=perl-protocol-websocket
 _pkgreal=Protocol-WebSocket
 pkgver=0.26
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="WebSocket protocol"
 url="https://metacpan.org/release/Protocol-WebSocket"
 arch="noarch"
@@ -32,6 +32,7 @@ package() {
 	./Build install --destdir="$pkgdir"
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 82384cdbeafc7b37fd4a97471c414e6653d311d1f4cc21de5ea4bbc3e06589df8e0a909e781470e8a84d3d74f6907a851f222338cea3f1f1aa6eb4a276149357  Protocol-WebSocket-0.26.tar.gz
 "
